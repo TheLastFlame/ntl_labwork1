@@ -17,8 +17,9 @@ class _PrivatePageState extends State<PrivatePage> {
 
   @override
   void didChangeDependencies() {
-    items = ImagesContext.of(context)!.images;
-
+    setState(() {
+      items = ImagesContext.of(context)!.images;
+    });
     super.didChangeDependencies();
   }
 
