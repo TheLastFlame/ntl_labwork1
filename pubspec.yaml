@@ -1,0 +1,22 @@
+name: ntl_labwork1
+description: "A new Flutter project."
+publish_to: "none"
+version: 0.1.0
+
+environment:
+  sdk: ">=3.2.0-134.1.beta <4.0.0"
+
+dependencies:
+  file_picker: ^5.5.0
+  flutter:
+    sdk: flutter
+  network_info_plus: ^5.0.0
+  zeroconnect: ^1.5.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
