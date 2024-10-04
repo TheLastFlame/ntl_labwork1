@@ -44,37 +44,19 @@ class _SendPageState extends State<SendPage> {
               ),
               child: Padding(
                 padding: const EdgeInsets.all(16),
-                child: Column(
-                  children: [
-                    Expanded(
-                      child: Card(
-                        margin: EdgeInsets.zero,
-                        child: SizedBox.expand(
-                          child: Center(
-                            child: controller.imageData == null
-                                ? const Icon(Icons.image)
-                                : Image.memory(controller.imageData!),
-                          ),
-                        ),
+                child: Card(
+                  clipBehavior: Clip.antiAlias,
+                  margin: EdgeInsets.zero,
+                  child: InkWell(
+                    onTap: controller.pickFile,
+                    child: SizedBox.expand(
+                      child: Center(
+                        child: controller.imageData == null
+                            ? const Icon(Icons.image)
+                            : Image.memory(controller.imageData!),
                       ),
                     ),
-                    const SizedBox(height: 16),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        ElevatedButton(
-                          onPressed: controller.pickFile,
-                          child: const Text('Select'),
-                        ),
-                        ElevatedButton(
-                          onPressed: controller.imageData == null
-                              ? null
-                              : controller.broadcastSend,
-                          child: const Text('Send to all'),
-                        )
-                      ],
-                    )
-                  ],
+                  ),
                 ),
               ),
             ),

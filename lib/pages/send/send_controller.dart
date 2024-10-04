@@ -28,8 +28,8 @@ class SendController {
     );
   }
 
-  void pickFile() {
-    FilePicker.platform.pickFiles(
+  Future pickFile() async {
+    await FilePicker.platform.pickFiles(
       withData: true,
       type: FileType.custom,
       allowedExtensions: ['jpg', 'png', 'jpeg'],
@@ -41,15 +41,8 @@ class SendController {
     );
   }
 
-  void broadcastSend() {
-    zc.broadcastBytes(
-      imageData!,
-      serviceId: 'ntll-broadcast',
-    );
-  }
-
   void sendToDevice(String deviceName) async {
-    var string = imageData.toString();
+    // var string = imageData.toString();
 
     isSending = true;
     update();
@@ -59,12 +52,16 @@ class SendController {
       nodeId: deviceName,
     );
 
+    isSending = false;
+    update();
+
     connect?.sendBytes(imageData!);
-    connect?.sendString(string);
+    // connect?.sendString(string);
   }
 
-  void privateSend(BuildContext context, String deviceName) {
-    if (imageData == null) return pickFile();
+  void privateSend(BuildContext context, String deviceName) async {
+    if (imageData == null) await pickFile();
+    if (!context.mounted) return;
     return confirmDialog(
       context,
       imageData!,

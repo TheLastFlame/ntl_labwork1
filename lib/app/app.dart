@@ -11,7 +11,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3,
+      length: 2,
       child: Scaffold(
         appBar: AppBar(
           bottom: TabBar(
@@ -21,12 +21,8 @@ class App extends StatelessWidget {
             tabAlignment: TabAlignment.start,
             tabs: const [
               MyTab(
-                text: 'Public Images',
-                icon: Icons.group_work_outlined,
-              ),
-              MyTab(
-                text: 'Private Images',
-                icon: Icons.lock_outline,
+                text: 'Get',
+                icon: Icons.image,
               ),
               MyTab(
                 text: 'Send',
@@ -38,7 +34,6 @@ class App extends StatelessWidget {
         ),
         body: const TabBarView(
           children: [
-            Icon(Icons.group_work_outlined),
             PrivatePage(),
             SendPage(),
           ],

@@ -27,17 +27,18 @@ class ConfirmDialog extends StatelessWidget {
           ),
         ],
       ),
-      content: Image.memory(imageData!),
+      content: Image.memory(imageData),
       actions: [
         ElevatedButton(
             onPressed: () => Navigator.pop(context),
             child: const Text('Cancel')),
         ElevatedButton(
-            onPressed: () {
-              Navigator.pop(context);
-              onSend();
-            },
-            child: const Text('Confirm'))
+          onPressed: () {
+            Navigator.pop(context);
+            onSend();
+          },
+          child: const Text('Confirm'),
+        )
       ],
     );
   }

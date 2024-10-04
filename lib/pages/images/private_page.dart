@@ -52,7 +52,7 @@ class _PrivatePageState extends State<PrivatePage> {
                             ),
                           ),
                         ),
-                      ))
+                      ),)
                   .toList(),
             ),
           ),
