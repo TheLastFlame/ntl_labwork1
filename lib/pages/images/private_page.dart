@@ -3,7 +3,7 @@ import 'dart:typed_data';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:ntl_labwork1/main.dart';
-import 'package:ntl_labwork1/pages/images.dart';
+import 'package:ntl_labwork1/pages/images/images.dart';
 
 class PrivatePage extends StatefulWidget {
   const PrivatePage({super.key});
