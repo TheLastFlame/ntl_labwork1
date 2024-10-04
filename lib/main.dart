@@ -18,7 +18,7 @@ Future<void> initServers() async {
     serviceId: serviceId,
     callback: (messageSock, nodeId, serviceId) async {
       var img = await messageSock.recvBytes();
-      ImagesContext.of(rootKey.currentContext!)!.images.add(img!);
+      ImagesContext.of(rootKey.currentContext!)!.addImage(img!);
     },
   );
 }
@@ -35,7 +35,7 @@ class TabBarDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ImagesContext(
-      images: [],
+      notifier: ImagesNotifier(),
       child: MaterialApp(
         key: rootKey,
         theme: ThemeData.light(),
