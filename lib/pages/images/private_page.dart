@@ -27,32 +27,43 @@ class _PrivatePageState extends State<PrivatePage> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text('Your ip: ${localId.replaceAll('-', '.')}'),
+        SizedBox(height: 10),
+        Container(
+          padding: EdgeInsets.all(8),
+          decoration: BoxDecoration(
+            color: Theme.of(context).colorScheme.primaryContainer,
+            borderRadius: BorderRadius.circular(16),
+          ),
+          child: Text('Your ip: ${localId.replaceAll('-', '.')}'),
+        ),
+        SizedBox(height: 10),
         Expanded(
           child: SingleChildScrollView(
             child: Wrap(
               children: items
-                  .map((e) => Padding(
-                        padding: const EdgeInsets.all(8),
-                        child: ConstrainedBox(
-                          constraints: BoxConstraints(maxWidth: 400),
-                          child: Card(
-                            child: InkWell(
-                              borderRadius: BorderRadius.circular(12),
-                              onTap: () {
-                                FilePicker.platform.saveFile(
-                                  dialogTitle: 'Please select an output file:',
-                                  fileName: 'image.jpg',
-                                );
-                              },
-                              child: Padding(
-                                padding: const EdgeInsets.all(16),
-                                child: Image.memory(e),
-                              ),
+                  .map(
+                    (e) => Padding(
+                      padding: const EdgeInsets.all(8),
+                      child: ConstrainedBox(
+                        constraints: BoxConstraints(maxWidth: 400),
+                        child: Card(
+                          child: InkWell(
+                            borderRadius: BorderRadius.circular(12),
+                            onTap: () {
+                              FilePicker.platform.saveFile(
+                                dialogTitle: 'Please select an output file:',
+                                fileName: 'image.jpg',
+                              );
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.all(16),
+                              child: Image.memory(e),
                             ),
                           ),
                         ),
-                      ),)
+                      ),
+                    ),
+                  )
                   .toList(),
             ),
           ),
