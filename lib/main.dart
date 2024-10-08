@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:network_info_plus/network_info_plus.dart';
 import 'package:ntl_labwork1/app/app.dart';
+import 'package:ntl_labwork1/app/edge2edge.dart';
 import 'package:ntl_labwork1/pages/images/images.dart';
 import 'package:zeroconnect/zeroconnect.dart';
 
@@ -25,6 +26,7 @@ Future<void> initServers() async {
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await settingUpSystemUIOverlay();
   await initServers();
   runApp(const TabBarDemo());
 }
