@@ -25,7 +25,7 @@ Future<void> initServers() async {
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  initServers();
+  await initServers();
   runApp(const TabBarDemo());
 }
 
