@@ -13,6 +13,7 @@
 - Android
 - IOS (Не тестировалось)
 - MacOS (Не тестировалось)
+- Linux (Не тестировалось)
 
 <details>
   <summary>Скриншоты</summary>  

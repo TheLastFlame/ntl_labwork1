@@ -15,6 +15,7 @@ No purpose or meaning, no complications, no good code.
 - Android
 - IOS (Not tested)
 - MacOS (Not tested)
+- Linux (Not tested)
   
 <details>
   <summary>Screenshots</summary>  
